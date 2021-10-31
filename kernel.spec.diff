@@ -1,6 +1,14 @@
---- SPECS/kernel.spec.orig	2021-10-31 08:08:44.721880589 +0000
-+++ SPECS/kernel.spec	2021-10-31 08:09:56.868413522 +0000
-@@ -807,6 +807,7 @@
+--- kernel.spec.orig	2021-10-31 08:08:44.721880589 +0000
++++ kernel.spec	2021-10-31 08:27:25.003615140 +0000
+@@ -464,6 +464,7 @@
+ Patch1000: debrand-single-cpu.patch
+ Patch1001: debrand-rh_taint.patch
+ Patch1002: debrand-rh-i686-cpu.patch
++Patch1003: fix_pci_hyperv_1031.diff
+ 
+ BuildRoot: %{_tmppath}/kernel-%{KVRA}-root
+ 
+@@ -807,6 +808,7 @@
  ApplyOptionalPatch debrand-single-cpu.patch
  ApplyOptionalPatch debrand-rh_taint.patch
  ApplyOptionalPatch debrand-rh-i686-cpu.patch

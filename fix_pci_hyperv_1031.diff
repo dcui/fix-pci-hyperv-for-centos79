@@ -1,5 +1,5 @@
---- drivers/pci/pci-hyperv.c.orig	2021-10-31 00:18:57.415436775 -0700
-+++ drivers/pci/pci-hyperv.c	2021-10-31 00:25:02.167579820 -0700
+--- old/drivers/pci/pci-hyperv.c	2021-10-31 00:18:57.415436775 -0700
++++ new/drivers/pci/pci-hyperv.c	2021-10-31 00:25:02.167579820 -0700
 @@ -852,6 +852,8 @@
  	u64 res;
  
