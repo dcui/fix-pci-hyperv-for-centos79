@@ -1,0 +1,10 @@
+--- SPECS/kernel.spec.orig	2021-10-31 08:08:44.721880589 +0000
++++ SPECS/kernel.spec	2021-10-31 08:09:56.868413522 +0000
+@@ -807,6 +807,7 @@
+ ApplyOptionalPatch debrand-single-cpu.patch
+ ApplyOptionalPatch debrand-rh_taint.patch
+ ApplyOptionalPatch debrand-rh-i686-cpu.patch
++ApplyOptionalPatch fix_pci_hyperv_1031.diff
+ 
+ # Any further pre-build tree manipulations happen here.
+ 
