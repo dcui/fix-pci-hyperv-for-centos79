@@ -1,0 +1,20 @@
+--- drivers/pci/pci-hyperv.c.orig	2021-10-31 00:18:57.415436775 -0700
++++ drivers/pci/pci-hyperv.c	2021-10-31 00:25:02.167579820 -0700
+@@ -852,6 +852,8 @@
+ 	u64 res;
+ 
+ 	ret = __ioapic_set_affinity(data, dest, &dest_id);
++	printk("cdx: 1: irq=%d, dest=%*pbl, cfg->domain=%*pbl, force=%d, dest_id=0x%x, ret=%d\n",
++		data->irq, cpumask_pr_args(dest), cpumask_pr_args(cfg->domain), force, dest_id, ret);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -898,6 +900,8 @@
+ 		}
+ 
+ 		cpumask_and(tmp, cfg->domain, cpu_online_mask);
++		cpumask_and(tmp, tmp, dest);
++		printk("cdx: 2: irq=%d, tmp=%*pbl\n", data->irq, cpumask_pr_args(tmp));
+ 		nr_bank = cpumask_to_vpset(&params->int_target.vp_set, tmp);
+ 		free_cpumask_var(tmp);
+ 
